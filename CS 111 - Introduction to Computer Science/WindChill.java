@@ -22,7 +22,8 @@ public class WindChill {
 
     public static void main(String[] args) {
 
-        double temperature = 0.0, velocity = 0.0;
+        double temperature = 0.0;
+        double velocity = 0.0;
 
         /* Check that exactly 2 numerical command-line arguments are provided; no more, no less.
            If not, display error message on console and terminate program. */
@@ -37,7 +38,7 @@ public class WindChill {
         try {
             temperature = Double.parseDouble(args[0]);
         }
-        catch (Exception _exception) {
+        catch (Exception exception) {
             System.out.println("INPUT ERROR: Non-numeric temperature detected");
             System.out.println("Terminating program...");
             return;
