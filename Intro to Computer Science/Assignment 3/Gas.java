@@ -47,8 +47,8 @@ public class Gas {
             }
         }
 
-    	double pricePerGallon = numbers[0];
-    	double numGallons = numbers[1];
+        double pricePerGallon = numbers[0];
+        double numGallons = numbers[1];
         boolean cashOrCredit;
 
         /* Input validation: check if the third command-line argument provided is not a boolean.
@@ -67,27 +67,27 @@ public class Gas {
         /* Input Validation: check that neither the price per gallon nor the number of gallons
            entered are <= 0. If any of them are, display the appropriate error message and
            terminate program. */
-    	if (pricePerGallon <= 0) {
-    		System.out.println("VALUE ERROR: The price per gallon cannot be less than or equal to zero.");
+        if (pricePerGallon <= 0) {
+            System.out.println("VALUE ERROR: The price per gallon cannot be less than or equal to zero.");
             System.out.println("Terminating program...");
-    		return;
-    	}
+            return;
+        }
         if (numGallons <= 0) {
             System.out.println("VALUE ERROR: The number of gallons cannot be less than or equal to zero.");
             System.out.println("Terminating program...");
-    		return;
+            return;
         }
 
         /* Compute total price as (price per gallon) multiplied by (number of gallons) */
-    	double totalPrice = pricePerGallon * numGallons;
+        double totalPrice = pricePerGallon * numGallons;
 
         /* If user entered "false" for cash/credit, then that means that the user will pay
            via credit card which implies a 10% service charge in addition to the toal price. */
-    	if (!cashOrCredit)
-    		totalPrice *= 1.1;
+        if (!cashOrCredit)
+            totalPrice *= 1.1;
 
         /* Display total price */
-    	System.out.println(totalPrice);
+        System.out.println(totalPrice);
 
     }
 
