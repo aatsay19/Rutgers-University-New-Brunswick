@@ -23,10 +23,10 @@ public class Gas {
 
     public static void main(String[] args) {
 
-        /* Check that exactly 3 integer command-line arguments are provided; no more, no less.
+        /* Check that exactly 3 command-line arguments are provided; no more, no less.
            If not, display error message and terminate program. */
         if (args.length != 3) {
-            System.out.println("USAGE ERROR: Program must have exactly 3 command-line argument inputs: [number_1] [number_2] [true/false]");
+            System.out.println("USAGE ERROR: Program must have exactly 3 command-line argument inputs: [number_1] [number_2] [\"true\"/\"false\"]");
             System.out.println("Terminating program...");
             return;
         }
@@ -38,7 +38,7 @@ public class Gas {
            parse the number from command-line arguments and store it into a double array. */
         for (int i = 0; i < 2; i++) {
             try {
-                numbers[i] = Double.parseDouble(args[0]);
+                numbers[i] = Double.parseDouble(args[i]);
             }
             catch (Exception exception) {
                 System.out.println("INPUT ERROR: Non-numeric temperature detected");
@@ -47,22 +47,46 @@ public class Gas {
             }
         }
 
-    	double pricePerGallon = Double.parseDouble(args[0]);
-    	double numGallons = Double.parseDouble(args[1]);
-    	boolean cashOrCredit = Boolean.parseBoolean(args[2]);
-    	// If cashOrCredit is true, the user will pay by cash and if false, then by credit
+    	double pricePerGallon = numbers[0];
+    	double numGallons = numbers[1];
+        boolean cashOrCredit;
 
-    	if (pricePerGallon <= 0 || numGallons <= 0) {
-    		System.out.println("Illegal input");
+        /* Input validation: check if the third command-line argument provided is not a boolean.
+           If any non-boolean input is found, display error message and terminate program. Otherwise
+           parse the number from command-line arguments. */
+        if (args[2].equals("true"))
+            cashOrCredit = true;
+        else if (args[2].equals("false"))
+            cashOrCredit = false;
+        else {
+            System.out.println("INPUT ERROR: Non-boolean value detected for cash/credit. Input must be either \"true\" or \"false\"");
+            System.out.println("Terminating program...");
+            return;
+        }
+
+        /* Input Validation: check that neither the price per gallon nor the number of gallons
+           entered are <= 0. If any of them are, display the appropriate error message and
+           terminate program. */
+    	if (pricePerGallon <= 0) {
+    		System.out.println("VALUE ERROR: The price per gallon cannot be less than or equal to zero.");
+            System.out.println("Terminating program...");
     		return;
     	}
+        if (numGallons <= 0) {
+            System.out.println("VALUE ERROR: The number of gallons cannot be less than or equal to zero.");
+            System.out.println("Terminating program...");
+    		return;
+        }
 
+        /* Compute total price as (price per gallon) multiplied by (number of gallons) */
     	double totalPrice = pricePerGallon * numGallons;
 
-    	if (cashOrCredit == false) {
-    		totalPrice = totalPrice * 1.1;
-    	}
+        /* If user entered "false" for cash/credit, then that means that the user will pay
+           via credit card which implies a 10% service charge in addition to the toal price. */
+    	if (!cashOrCredit)
+    		totalPrice *= 1.1;
 
+        /* Display total price */
     	System.out.println(totalPrice);
 
     }
