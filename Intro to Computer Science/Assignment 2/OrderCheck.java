@@ -23,7 +23,7 @@ public class OrderCheck {
         /* Check that exactly 4 integer command-line arguments are provided; no more, no less.
            If not, display error message and terminate program. */
         if (args.length != 4) {
-            System.out.println("USAGE ERROR: Program must have exactly 4 integer command-line argument inputs: [number_1] [number_2] [number_3] [number_4]");
+            System.out.println("USAGE ERROR: Program must have exactly 4 integer command-line argument inputs: [number_1 (integer)] [number_2 (integer)] [number_3 (integer)] [number_4 (integer)]");
             System.out.println("Terminating program...");
             return;
         }
@@ -31,7 +31,7 @@ public class OrderCheck {
         int[] integers = new int[4];
 
         /* Input validation: check if any of the command-line arguments provided are not integers.
-           If any non-integer input is found, display error message and terminate program. Otherwise 
+           If any non-integer input is found, display error message and terminate program. Otherwise, 
            parse the integers from command-line arguments and store it into an integer array. */
         for (int i = 0; i < 4; i++) {
             try {

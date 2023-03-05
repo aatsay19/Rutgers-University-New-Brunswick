@@ -25,7 +25,7 @@ public class WindChill {
         /* Check that exactly 2 numerical command-line arguments are provided; no more, no less.
            If not, display error message on console and terminate program. */
         if (args.length != 2) {
-            System.out.println("USAGE ERROR: Program must have exactly 2 numerical command-line argument inputs: [temperature] [velocity]");
+            System.out.println("USAGE ERROR: Program must have exactly 2 numerical command-line argument inputs: [temperature (double)] [velocity (double)]");
             System.out.println("Terminating program...");
             return;
         }
@@ -33,7 +33,7 @@ public class WindChill {
         double[] numbers = new double[2];
 
         /* Input validation: check if any of the command-line arguments provided are not integers.
-           If any non-numeric input is found, display error message and terminate program. Otherwise
+           If any non-numeric input is found, display error message and terminate program. Otherwise,
            parse the number from command-line arguments and store it into a double array. */
         for (int i = 0; i < 2; i++) {
             try {
@@ -57,12 +57,12 @@ public class WindChill {
            is larger than 120 or less than 3. If the formula becomes invalid, display error message
            and terminate program. */
         if (Math.abs(temperature) > 50) {
-            System.out.println("RANGE ERROR: Temperature must be between -50 and 50 degrees Farenheit");
+            System.out.println("VALUE ERROR: Temperature must be between -50 and 50 degrees Farenheit");
             System.out.println("Terminating program...");
             return;
         }
         if (velocity < 3 || velocity > 120) {
-            System.out.println("RANGE ERROR: Velocity must be between 3 and 120 mph");
+            System.out.println("VALUE ERROR: Velocity must be between 3 and 120 mph");
             System.out.println("Terminating program...");
             return;
         }

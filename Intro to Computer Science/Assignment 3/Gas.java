@@ -26,7 +26,7 @@ public class Gas {
         /* Check that exactly 3 command-line arguments are provided; no more, no less.
            If not, display error message and terminate program. */
         if (args.length != 3) {
-            System.out.println("USAGE ERROR: Program must have exactly 3 command-line argument inputs: [number_1] [number_2] [\"true\"/\"false\"]");
+            System.out.println("USAGE ERROR: Program must have exactly 3 command-line argument inputs: [price_per_gallon (double)] [number_of_gallons (double)] [cash/card (\"true\"/\"false\")]");
             System.out.println("Terminating program...");
             return;
         }
@@ -34,7 +34,7 @@ public class Gas {
         double[] numbers = new double[2];
 
         /* Input validation: check if the first two command-line arguments provided are not numbers.
-           If any non-numeric input is found, display error message and terminate program. Otherwise
+           If any non-numeric input is found, display error message and terminate program. Otherwise,
            parse the number from command-line arguments and store it into a double array. */
         for (int i = 0; i < 2; i++) {
             try {
@@ -52,14 +52,14 @@ public class Gas {
         boolean cashOrCredit;
 
         /* Input validation: check if the third command-line argument provided is not a boolean.
-           If any non-boolean input is found, display error message and terminate program. Otherwise
-           parse the number from command-line arguments. */
+           If any non-boolean input is found, display error message and terminate program. Otherwise,
+           parse the value from command-line arguments. */
         if (args[2].equals("true"))
             cashOrCredit = true;
         else if (args[2].equals("false"))
             cashOrCredit = false;
         else {
-            System.out.println("INPUT ERROR: Non-boolean value detected for cash/credit. Input must be either \"true\" or \"false\"");
+            System.out.println("INPUT ERROR: Non-boolean value detected for cash/card. Input must be either \"true\" or \"false\"");
             System.out.println("Terminating program...");
             return;
         }
@@ -82,7 +82,7 @@ public class Gas {
         double totalPrice = pricePerGallon * numGallons;
 
         /* If user entered "false" for cash/credit, then that means that the user will pay
-           via credit card which implies a 10% service charge in addition to the toal price. */
+           via credit card which implies a 10% service charge added to the total price. */
         if (!cashOrCredit)
             totalPrice *= 1.1;
 
