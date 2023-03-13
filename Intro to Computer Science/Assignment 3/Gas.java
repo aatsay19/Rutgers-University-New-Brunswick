@@ -8,8 +8,8 @@
  *  This program takes three command-line arguments, the price per
  *  gallon, the number of gallons, and a boolean value to determine
  *  whether payment will be done via cash or card (true = cash, false =
- *  credit) , computes and displays the price a person will pay for gas
- *  at the gas station.
+ *  credit). It then computes and displays the price a person will pay 
+ *  for gas at the gas station.
  *
  *  % java Gas 3.40 15.0 false
  *  56.1
