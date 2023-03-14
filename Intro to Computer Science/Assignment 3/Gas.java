@@ -5,12 +5,17 @@
  *  @author: Aatif Sayed
  *  E-mail:  aatifsayed9@gmail.com
  *
- *  This program takes three command-line arguments, the price per
- *  gallon, the number of gallons, and a boolean value to determine
- *  whether payment will be done via cash or card (true = cash, false =
- *  credit). It then computes and displays the price a person will pay 
- *  for gas at the gas station.
+ *  This program takes three command-line arguments: the price per gallon
+ *  (double), the number of gallons (double), and a boolean value to
+ *  determine whether payment will be done via cash or card (true = cash,
+ *  false = credit). It then computes and displays the price a person will pay 
+ *  for gas according to the following:
  *
+ *    - Total Price = (price per gallon) * (number of gallons)
+ *    - If user entered "false" for cash/credit, then that means that
+ *      the user will pay via credit card which implies a 10% service
+ *      fee added to the total price.
+ *  
  *  % java Gas 3.40 15.0 false
  *  56.1
  *
@@ -26,7 +31,9 @@ public class Gas {
         /* Check that exactly 3 command-line arguments are provided; no more, no less.
            If not, display error message and terminate program. */
         if (args.length != 3) {
-            System.out.println("USAGE ERROR: Program must have exactly 3 command-line argument inputs: [price_per_gallon (double)] [number_of_gallons (double)] [cash/card (\"true\"/\"false\")]");
+            System.out.println("USAGE ERROR: Program must have exactly 3 command-line argument " +
+                    "inputs: [price_per_gallon (double)] [number_of_gallons (double)] [cash/card " +
+                    "(\"true\"/\"false\")]");
             System.out.println("Terminating program...");
             return;
         }
@@ -59,7 +66,8 @@ public class Gas {
         else if (args[2].equals("false"))
             cashOrCredit = false;
         else {
-            System.out.println("INPUT ERROR: Non-boolean value detected for cash/card. Input must be either \"true\" or \"false\"");
+            System.out.println("INPUT ERROR: Non-boolean value detected for cash/card. Input must be " +
+                    "either \"true\" or \"false\"");
             System.out.println("Terminating program...");
             return;
         }
@@ -87,7 +95,7 @@ public class Gas {
             totalPrice *= 1.1;
 
         /* Display total price */
-        System.out.println(totalPrice);
+        System.out.printf("%.2f", totalPrice);
 
     }
 

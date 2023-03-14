@@ -5,12 +5,18 @@
  *  @author: Aatif Sayed
  *  E-mail: aatifsayed9@gmail.com
  *
- *  The program TrainTicket takes two command-line arguments: an int
- *  referring to the persons age and a boolean referring to whether or
- *  not the ticket was bought at the train station (true for a ticket
- *  bought at the train station). The program computes and displays the
- *  ticket price the person needs to pay for the train ride according
- *  to a set of rules.
+ *  This program takes two command-line arguments: an age (int) and a
+ *  boolean referring to whether or not the ticket was bought at the
+ *  train station (true = bought at station, false = bought on train).
+ *  The program computes and displays the ticket price the person needs
+ *  to pay for the train ride according to the following set of rules:
+ *
+ *    - Kids ride free (age < 7)
+ *    - Senior citizens ride at a discounted price of $7.50 (age > 65)
+ *    - Everyone else rides at the regular price of $13.20
+ *    - If user entered "false" for train/station, then that means that
+ *      the user bought the ticket on the train which implies a 20% extra
+ *      charge added to the total price.
  *
  *  % java TrainTicket 23 true
  *  13.20
@@ -30,7 +36,8 @@ public class TrainTicket {
         /* Check that exactly 2 command-line arguments are provided; no more, no less.
            If not, display error message and terminate program. */
            if (args.length != 2) {
-            System.out.println("USAGE ERROR: Program must have exactly 2 command-line argument inputs: [age (integer)] [train/station (\"true\"/\"false\")]");
+            System.out.println("USAGE ERROR: Program must have exactly 2 command-line argument " +
+                    "inputs: [age (integer)] [train/station (\"true\"/\"false\")]");
             System.out.println("Terminating program...");
             return;
         }
@@ -58,36 +65,36 @@ public class TrainTicket {
         else if (args[1].equals("false"))
             trainOrStation = false;
         else {
-            System.out.println("INPUT ERROR: Non-boolean value detected for train/station. Input must be either \"true\" or \"false\"");
+            System.out.println("INPUT ERROR: Non-boolean value detected for train/station. Input " +
+                    "must be either \"true\" or \"false\"");
             System.out.println("Terminating program...");
             return;
         }
 
         double price;
 
-        /* Calculate price based on the age and the following rules:
-            - Kids (age below 7) ride free
-            - Senior citizens (age above 65) ride at a discounted price of $7.50
-            - Everyone else rides at the regular price of $13.20 
-           If the age is below 0 or greater than 120, display error message and terminate program. */
+        
+        /* If the age is below 0 or greater than 120, display error message and terminate program. */
         if (age < 0 || age > 120) {
             System.out.println("VALUE ERROR: Age must be between 0 and 120");
             System.out.println("Terminating program...");
             return;
         }
+
+        /* Calculate price based on the age and the aforementioned rules */
         else if (age < 7)
-            price = 0;
+            price = 0;  // Kids ride free (age below 7)
         else if (age > 65)
-            price = 7.50;
+            price = 7.50;  // Senior citizens ride at a discounted price of $7.50 (age above 65)
         else
-            price = 13.20;
+            price = 13.20;  // Everyone else rides at the regular price of $13.20
 
         /* If user entered "false" for train/station, then that means that the user bought the 
            ticket on the train which implies a 20% extra charge added to the total price. */
         if (trainOrStation == false)
             price *= 1.2;
 
-        // Display total price 
+        // Display total price formatted to 2 decimal places
         System.out.printf("%.2f", price);
 
     }

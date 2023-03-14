@@ -5,9 +5,9 @@
  *  @author: Aatif Sayed
  *  E-mail:  aatifsayed9@gmail.com
  *
- *  Program that takes two double command-line arguments, temperature
- *  (in Farenheit) and velocity (in mph), and prints the wind chill
- *  (a double) according to the following formula:
+ *  This program takes two double command-line arguments: temperature
+ *  (in Farenheit) and velocity (in mph). It computes and displays the 
+ *  wind chill (a double) according to the following formula:
  *
  *  w = 35.74 + 0.6215*T + (0.4275*T - 35.75) * v^0.16
  *
@@ -25,7 +25,8 @@ public class WindChill {
         /* Check that exactly 2 numerical command-line arguments are provided; no more, no less.
            If not, display error message on console and terminate program. */
         if (args.length != 2) {
-            System.out.println("USAGE ERROR: Program must have exactly 2 numerical command-line argument inputs: [temperature (double)] [velocity (double)]");
+            System.out.println("USAGE ERROR: Program must have exactly 2 numerical command-line " +
+                    "argument inputs: [temperature (double)] [velocity (double)]");
             System.out.println("Terminating program...");
             return;
         }
@@ -67,8 +68,11 @@ public class WindChill {
             return;
         }
 
-        // Calculate wind chill from given formula and display it (formatted to 3 decimal places)
-        double windChill = (35.74 + 0.6215 * temperature + (0.4275 * temperature - 35.75) * Math.pow(velocity, 0.16));
+        /* Calculate wind chill from given formula */
+        double windChill;
+        windChill = (35.74 + 0.6215 * temperature + (0.4275 * temperature - 35.75) * Math.pow(velocity, 0.16));
+
+        /* Display calculated wind chill value (formatted to 3 decimal places) */
         System.out.println("Wind Chill: " + String.format("%.3f", windChill) + " degrees Farenheit");
 
     }
