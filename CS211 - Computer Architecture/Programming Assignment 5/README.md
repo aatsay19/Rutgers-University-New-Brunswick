@@ -189,12 +189,12 @@ Though you can and should just use the pa5/cacheOblivious/autograder.py script, 
 
 The pa5/cacheOblivious/tests/ directory contains the memory access traces for the baseline pa5/matTrans/matTrans program that you are competing against.</br></br>
 
-# Simulating Memory Accesses on a Cache Simulator
+## Simulating Memory Accesses on a Cache Simulator
 Third, you can use the reference simulator pa5/csim-ref to simulate the memory traces. For this part of the assignment, we assume a 256-byte 4-way set-associative LRU cache with 16-byte blocks (this design should sound familiar).
 
 The pa5/cacheOblivious/answers/ directory contains the summary statistics for the baseline pa5/matTrans/matTrans program that you are competing against. You want to optimize your cacheOblivious.c program to perform better than the baseline assuming the above cache design. For full credit, you should have higher hit count, lesser miss count, and lesser eviction count than the baseline.</br></br>
 
-# Cache Oblivious Algorithm Implementation
+## Cache Oblivious Algorithm Implementation
 You may want to research about cache oblivious matrix transpose. Cache oblivious code is a way to write programs so that they will have favorable cache performance, regardless of what the specific cache parameters are.</br></br></br>
 
 # How To Submit
