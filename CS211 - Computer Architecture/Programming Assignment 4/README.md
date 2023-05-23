@@ -6,7 +6,7 @@ Rutgers University - New Brunswick</br>
 ## Learning Goals
 You will learn about how all programs written in programming languages like C are compiled down to assembly instructions that run as machine code on hardware. You will learn to reverse engineer what short snippets of assembly code are doing. You will gain familiarity with the Linux environment and debugging tools such as gdb and objdump.</br></br>
 
-## To get started, read the assignment writeup [pdf]
+## [To get started, read the assignment writeup \[pdf\]](./2021_0s_211_PA4.pdf)
 
 </br>
 
