@@ -18,7 +18,7 @@ Get started early! You can post questions to the class Piazza (please avoid send
 * We will be checking the assignments for identical and/or plagiarized code using automated tools.
 * https://www.cs.rutgers.edu/academics/undergraduate/academic-integrity-policy
 * https://www.cs.rutgers.edu/academics/undergraduate/academic-integrity-policy/programming-assignments
-* The instruction staff takes the Rutgers University Academic Integrity Policy seriously. Please review it at: https://nbprovost.rutgers.edu/academic-integrity-students (Links to an external site.). We will report all violations.</br></br>
+* The instruction staff takes the Rutgers University Academic Integrity Policy seriously. Please review it at: https://nbprovost.rutgers.edu/academic-integrity-students (Links to an external site.). We will report all violations.</br></br></br>
 
 # How To Submit
 See the assignment writeup for submission instructions.
