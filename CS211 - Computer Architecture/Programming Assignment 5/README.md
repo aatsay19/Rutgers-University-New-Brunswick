@@ -34,7 +34,7 @@ git clone https://github.com/yipenghuang0302/2021_0s_211.git
 The files for this assignment are in the directory 2021_0s_211/pa5/.</br></br></br>
 
 # 1. fullyAssociative: Simulating a Fully Associative Cache With FIFO Cache Replacement Policy (easy) (24 points)
-Your task in this section is to build a program that simulates the behavior of a CPU cache. 
+Your task in this section is to build a program that simulates the behavior of a CPU cache.</br></br>
 
 ## Input Format
 Your program should take a single command line argument specifying the path to an input file. The input file is a memory access trace that lists memory locations that some other example program had accessed over the course of its execution. Example input files are in the tests/ directory. Each line in the input file lists a memory access, and contains the following information:
@@ -88,7 +88,7 @@ or
 python3 autograder.py
 ```
 
-</br>
+</br></br>
 
 # 2. directMapped: Simulating a Direct-Mapped Cache (easy) (24 points)
 Your task in this section is to modify your simulator so that it simulates a direct-mapped cache.</br></br>
@@ -115,7 +115,7 @@ Expected outputs from your program for each test case are in the answers/ direct
 
 "hits:16 misses:1 evictions:0"
 
-Indicating that memory accesses led to 16 cache hits, 1 cache miss, and no cache evictions.
+Indicating that memory accesses led to 16 cache hits, 1 cache miss, and no cache evictions.</br></br></br>
 
 # 3. setAssociative: Simulating a 4-Way Set-Associative Cache (medium) (24 points)
 Your task in this section is to modify your simulator so that it simulates a set-associative cache.</br></br>

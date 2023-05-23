@@ -35,7 +35,7 @@ The files for this assignment are in the directory 2021_0s_211/pa3/.</br></br></
 # 1. toHex: Converting Signed Integers to Binary and Hexadecimal Representation (easy) (24 points)
 Computers represent numbers using a base-2 binary number system to represent integers. And in order to represent both positive and negative numbers, they use a two's complement number system that overflows (wraps around) nicely and has simple rules for carrying out addition and subtraction. Because binary numbers are unwieldy for human beings to read and write, we use hexadecimal notation to make the representation more compact.
 
-In this part of the assignment, you will take positive and negative integers that can be represented using signed short (16-bit) integer data types and print out their hexadecimal representation.
+In this part of the assignment, you will take positive and negative integers that can be represented using signed short (16-bit) integer data types and print out their hexadecimal representation.</br></br>
 
 ## Input Format
 Your program should take a single command line argument specifying the path to an input file. Test cases for your program are in the tests/ directory. In each test case there is a single integer, written in base-10, that is within the range of the signed short int data type (-32,768 to +32,767).</br></br>
@@ -85,7 +85,7 @@ In this part of the assignment, you will decode the 32-bit binary representation
 ## Input Format
 Your program should take a single command line argument specifying the path to an input file. Test cases for your program are in the tests/ directory. Each test case consists of a string of 32 1's and 0's giving the binary representation of a floating point number. The sign bit is given in the leftmost position in the string.</br></br>
 
-# Output Format
+## Output Format
 You should print the value of the floating point number. You can use the "%f" (for floats) and "%e" (for floats in scientific notation) printf format specifiers for printing. The autograder will be able to recognize both formats. Expected outputs from your program for each test case are in the answers/ directory.</br></br></br>
 
 # 4. doubleToBin: Find the Binary Representation of a Double-Precision Floating Point Number (hard) (24 points)
