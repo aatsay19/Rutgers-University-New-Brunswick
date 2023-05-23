@@ -15,7 +15,7 @@ Get started early! You can post questions to the class Piazza (please avoid send
 * We will be checking the assignments for identical and/or plagiarized code using automated tools.
 * https://www.cs.rutgers.edu/academics/undergraduate/academic-integrity-policy
 * https://www.cs.rutgers.edu/academics/undergraduate/academic-integrity-policy/programming-assignments
-* The instruction staff takes the Rutgers University Academic Integrity Policy seriously. Please review it at: https://nbprovost.rutgers.edu/academic-integrity-students. We will report all violations.</br></br> 
+* The instruction staff takes the Rutgers University Academic Integrity Policy seriously. Please review it at: https://nbprovost.rutgers.edu/academic-integrity-students. We will report all violations.</br></br>
 
 ## Setup
 Access the programming assignment files for this assignment by pulling new files from the class Github repository, 2021_0s_211:
