@@ -9,6 +9,7 @@ You will learn about how data is represented in computers, and you will learn ab
 
 ## Resources
 Get started early! You can post questions to the class Piazza (please avoid sending emails to the TAs and instructor).
+
 * You can discuss the assignment with your classmates, but you cannot copy code from your classmates.
 * You can use the internet to research the mechanics of the C programming language, data types, and algorithms, but you cannot use websites that offer ready-made answers specific to this assignment and this class. Consider citing any sources that you use in your research; such a citation can be as simple as providing a link to a webpage in a code comment.
 * We will be checking the assignments for identical and/or plagiarized code using automated tools.
