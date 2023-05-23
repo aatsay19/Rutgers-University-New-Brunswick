@@ -3,8 +3,8 @@ Prof. Yipeng Huang</br>
 Rutgers University - New Brunswick</br>
 2021 Spring</br></br>
 
-# 0. Introduction and setup
-## Learning goals
+# 0. Introduction and Setup
+## Learning Goals
 You will gain experience programming in C while reviewing data structures and algorithms concepts. You will practice using the Linux command line to compile, run, debug, and test programs.</br></br>
 
 ## Resources
@@ -18,82 +18,105 @@ If you do not already have access to ilab, activate your account here: https://s
 For information on how to access the ilab Linux machines using ssh or x2go from a Windows or Mac machine, see: https://resources.cs.rutgers.edu/docs/new-users/beginners-info/.
 
 Access the programming assignment files for this assignment by cloning this Github repository:
+
 ```
 git clone https://github.com/yipenghuang0302/2021_0s_211.git
 ```
+
 The files for this assignment are in the directory 2021_0s_211/pa1/.</br></br></br>
 
-# 1. goldbach: Goldbach's weak conjecture (22 points)
+# 1. goldbach: Goldbach's Weak Conjecture (22 points)
 Goldbach's conjecture is a famous unsolved problem in mathematics. It states that every even number greater than two is the sum of two prime numbers. While the statement has been shown to be true for quintillions of even numbers, mathematicians have not yet devised a rigorous proof of the statement.
 
 In this part of the assignment you will write a C program that demonstrates the related Goldbach's weak conjecture, which states that every odd number greater than 5 is the sum of three primes. This weaker claim is implied by the more famous Goldbach's conjecture, and this weaker claim has potentially been proven by mathematicians.
 
 Your task is to write a C program called goldbach which will take an odd number greater than 5 as a command line argument:
+
 ```
 ./goldbach 7
 ```
+
 Your program should then output to the command line a valid equation showing that the given number is the sum of three primes:
+
 ```
 7 = 2 + 2 + 3
 ```
+
 You will receive 5 points for a program that compiles, incremental points for passing a few test cases, and full marks if your program successfully passes 100 randomized inputs.</br></br></br>
 
-# How to compile, run, and test your code
+# How To Compile, Run, and Test Your Code
 First, you should rename goldbach_provided.c to goldbach.c by entering:
+
 ```
 mv goldbach_provided.c goldbach.c
 ```
+
 Your program should be written in the file goldbach.c.</br></br>
 
 To compile your source code goldbach.c, you can type:
+
 ```
 gcc -Wall -Werror -fsanitize=address -std=c99 -o goldbach goldbach.c -lm
 ```
+
 We've provided several important useful compiler flags.</br></br>
 
 Alternatively, to build the executable, you can type:
+
 ```
 make
 ```
+
 </br>
 
 Once your program is successfully compiled, you can run your program:
+
 ```
 ./goldbach 7
 ```
+
 You should make sure your C program returns 0 indicating successful program termination.</br></br>
 
 To use the autograder script to test your program, you can type:
+
 ```
 ./autograder
 ```
+
 or
+
 ```
 python3 autograder.py
 ```
+
 </br>
 
 We will be automatically building, testing, and grading your assignment. Make sure that we can build your assignment by just using the Makefile and that we can run the program by invoking our autograder. Make sure to follow the required output format; any extraneous output such as debugging statements will confuse the grading program. You can check if you have accidentally modified your autograder:
+
 ```
 git diff autograder.py
 ```
+
 </br></br>
 
-# 2. maximum: finding the N maximum elements of a list (22 points)
+# 2. maximum: Finding the N Maximum Elements of a List (22 points)
 Your task in this part of the assignment is to write a C program that returns the largest elements of a list of signed integers. Your program should take as a command line input the path to an input file:
+
 ```
 ./maximum tests/test0.txt
 ```
+
 The first line of this text file says how many numbers will be in the list. The second line of this text file says how many of the largest elements you should return. The third line is a list of positive and negative integers from which you should select the largest numbers.
 
 You program should print to the command line the list of the largest numbers in any order, separated by spaces.
 
 The corresponding expected outputs are in the answers directory: answers/answer0.txt.</br></br></br>
 
-# 3. matMul: matrix multiplication (22 points)
+# 3. matMul: Matrix Multiplication (22 points)
 Matrix multiplication is a fundamental task in almost every area of computer science, including machine learning and solving scientific problems. You may wish to review the rules of matrix multiplication. Suppose matrix A has size L rows x M columns, matrix B has size M x N, then the matrix multiplication of the two matrices A x B = C, where matrix C has size L x N.
 
 Your task is to write a C program that takes two command line inputs, indicating two files to load. The first file contains matrix A and the second file contains matrix B. For example:
+
 ```
 ./matMul tests/matrix_a_0.txt tests/matrix_b_0.txt
 ```
@@ -104,7 +127,7 @@ Your program should load these files and perform matrix multiplication of the tw
 
 The corresponding expected outputs are in the answers directory: e.g., answers/matrix_c_0.txt.</br></br></br>
 
-# 4. balanced: checking if braces are balanced or not using a stack (22 points)
+# 4. balanced: Checking if Braces Are Balanced or Not Using a Stack (22 points)
 You may have noticed that your favorite text editor or integrated development environment (IDE) can help you check if open parentheses, brackets, and braces are properly closed. That is, whether each open '<', '(', '[', and '{' is properly closed with a corresponding '>', ')', ']', and '}' without any intervening open parentheses, brackets, or braces.
 
 For example, these are balanced expressions:
@@ -120,20 +143,24 @@ But these are not:
 <<>[<()>]
 
 Your task in this part of the assignment is to write a C program using structs and pointers to build a stack data structure, and use that stack to check whether a string is properly balanced. Your program should take as a command line input the path to an input file:
+
 ```
 ./balanced tests/test0.txt
 ```
+
 Your program should check whether the expression in the input file is balanced, and then print to the command line "yes" if the expression is balanced, and "no" if it is not.
 
 The corresponding expected outputs are in the answers directory: answers/answer0.txt.</br></br></br>
 
-# 5. bstReverseOrder: reverse order traversal of a binary search tree (22 points)
+# 5. bstReverseOrder: Reverse Order Traversal of a Binary Search Tree (22 points)
 Your task in this part of the assignment is to write a C program that constructs a binary search tree from a list of input numbers, and then print out the binary search tree in a reverse order traversal of the tree. You may find it helpful to review the properties of a binary search tree, and the various flavors of tree traversal order. In a binary search tree, the key in each node is greater than all keys in its left subtree, and is lesser than all keys in its right subtree.
 
 Your program should take as a command line input the path to an input file:
+
 ```
 ./bstBreadthFirst tests/test0.txt
 ```
+
 Each line of the input file lists a number to be inserted into the binary search tree. If a number has already been inserted, you can ignore the duplicate insertion. Since we are not performing tree balancing, everyone should arrive at the same binary search tree structure for any given input sequence. For example, an input sequence of 8,3,6,1,10,4,14,7,13 would lead to this unique binary search tree (image credit wikimedia):
 
 ![](bstReverseOrder/Binary_search_tree.svg "Binary Search Tree")
@@ -142,18 +169,23 @@ Once the binary search tree is constructed, your program should print out the no
 
 The corresponding expected outputs are in the answers directory: answers/answer0.txt.</br></br></br>
 
-# How to submit
+# How To Submit
 From the pa1/ directory, you can run this command to check on the outputs of our autograder script.
+
 ```
 ./assignment_autograder
 ```
+
 or
+
 ```
 python3 assignment_autograder.py
 ```
+
 </br>
 
 When you are ready to submit, from the 2021_0s_211/ directory where you see the pa1/ directory, run this command:
+
 ```
 tar cvf pa1.tar pa1/
 ```

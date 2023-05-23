@@ -12,17 +12,23 @@ bool isTreeDFS (
 ) {
 
     // First see if current node has already been visited, indicating a cycle found
-    /* ... */
+    for (int i = 0; i < graphNodeCount; i++) {
+        if (visited[current]) {
+            return false;
+        }
+    }
 
     // Current node was not already visited, so now mark it as visited
-    /* ... */
+    visited[current] = true;
 
     // Now iterate through each of the neighboring graph nodes
     AdjacencyListNode* neighbor = adjacencyList[current].next;
     while (neighbor) {
         if (neighbor->graphNode!=parent) {
             // If the neighbor nodes is not the parent node (the node from which we arrived at current), call DFS
-            /* ... */
+            if (!isTreeDFS(graphNodeCount, adjacencyList, visited, current, neighbor->graphNode)) {
+                return false;
+            }
         }
         neighbor = neighbor->next;
     }
@@ -35,15 +41,27 @@ int main ( int argc, char* argv[] ) {
 
     // READ INPUT FILE TO CREATE GRAPH ADJACENCY LIST
     AdjacencyListNode* adjacencyList = NULL;
-    /* ... */
+    size_t graphNodeCount = adjMatrixToList(argv[1], &adjacencyList);
 
     // Array of boolean variables indicating whether graph node has been visited
     bool* visited = calloc ( graphNodeCount, sizeof(bool) );
-    /* ... */
+    for (int i = 0; i < graphNodeCount; i++) {
+        visited[i] = false;
+    }
 
-    /* ... */
+    bool isTree = true;
+    if (isTreeDFS(graphNodeCount, adjacencyList, visited, adjacencyList->graphNode, adjacencyList->next->graphNode)) {
+        isTree = true;
+    }
+    else {
+        isTree = false;
+    }
 
     printf(isTree ? "yes" : "no");
 
+    freeAdjList(graphNodeCount, adjacencyList);
+    //free(adjacencyList);
+    free(visited);
     return EXIT_SUCCESS;
+
 }

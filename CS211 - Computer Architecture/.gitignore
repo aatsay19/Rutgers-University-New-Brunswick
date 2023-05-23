@@ -56,7 +56,6 @@ Mkfile.old
 dkms.conf
 
 *.txt
-*.png
 submissions.zip
 submissions
 answer_key
