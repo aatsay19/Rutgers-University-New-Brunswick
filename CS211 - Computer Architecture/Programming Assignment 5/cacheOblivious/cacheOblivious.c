@@ -13,9 +13,27 @@ void recursiveMatTrans (
     size_t n, // size of submatrix in this recursive call
     int* A, size_t offset_row_A, size_t offset_col_A,
     int* B, size_t offset_row_B, size_t offset_col_B
+    // int x, int delx, int y, int dely, int N, int M, int* matrix, int* matrixT
 ) {
 
-    if (n<=32) { // base case
+    // if ((delx == 1) && (dely == 1)) {
+    //     matrixT[(M*x) + y] = matrix[(N*y) + x];
+    //     return;
+    // }
+
+    // if (delx >= dely) {
+    //     int xmid = delx / 2;
+    //     recursiveMatTrans(x, xmid, y, dely, N, M, matrix, matrixT);
+    //     recursiveMatTrans(x + xmid, delx - xmid, y, dely, N, M, matrix, matrixT);
+    //     return;
+    // }
+
+    // int ymid = dely / 2;
+    // recursiveMatTrans(x, delx, y, ymid, N, M, matrix, matrixT);
+    // recursiveMatTrans(x, delx, y + ymid, dely - ymid, N, M, matrix, matrixT);
+
+    // if (n<=32) { // base case
+    if (n<=4) { // base case
         for ( size_t i=0; i<n; i++ ) {
             for ( size_t j=0; j<n; j++ ) {
                 B[ (offset_row_B+j)*global_n + offset_col_B+i ] = A[ (offset_row_A+i)*global_n + offset_col_A+j ];
@@ -23,9 +41,9 @@ void recursiveMatTrans (
         }
     } else { // recursive case
         recursiveMatTrans ( global_n, n>>1, A, offset_row_A,        offset_col_A,        B, offset_row_B,        offset_col_B        );
-        /* ... */
-        /* ... */
-        /* ... */
+        recursiveMatTrans ( global_n, n>>1, A, offset_row_A,        offset_col_A + (n>>1),        B, offset_row_B + (n>>1),        offset_col_B       );
+        recursiveMatTrans ( global_n, n>>1, A, offset_row_A + (n>>1),        offset_col_A,        B, offset_row_B,        offset_col_B + (n>>1)        );
+        recursiveMatTrans ( global_n, n>>1, A, offset_row_A + (n>>1),        offset_col_A + (n>>1),        B, offset_row_B + (n>>1),        offset_col_B + (n>>1)       );
     }
 }
 

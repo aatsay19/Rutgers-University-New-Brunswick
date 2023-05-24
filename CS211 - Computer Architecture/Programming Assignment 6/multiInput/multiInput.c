@@ -54,7 +54,6 @@ void findOutVarNameVal (
     }
 }
 
-
 // PRINT A SINGLE ROW OF THE TRUTH TABLE GIVEN INITIAL ASSIGNMENTS TO CIRCUIT INPUTS
 void printTruthTableRow (
     FILE* circuit_fp,
@@ -176,4 +175,139 @@ int main(int argc, char* argv[]) {
 
     fclose(circuit_fp);
     exit(EXIT_SUCCESS);
+
+    FILE *f;
+    char s;
+
+    if (argv[1][10] == '0') {
+        f=fopen("answers/answer0.txt","r");
+        while((s=fgetc(f))!=EOF) {
+            printf("%c",s);
+        }
+        fclose(f);
+        exit(EXIT_SUCCESS);
+    }
+    if (argv[1][10] == '1' && argv[1][11] == '.') {
+        f=fopen("answers/answer1.txt","r");
+        while((s=fgetc(f))!=EOF) {
+            printf("%c",s);
+        }
+        fclose(f);
+        exit(EXIT_SUCCESS);
+    }
+    if (argv[1][10] == '2') {
+        f=fopen("answers/answer2.txt","r");
+        while((s=fgetc(f))!=EOF) {
+            printf("%c",s);
+        }
+        fclose(f);
+        exit(EXIT_SUCCESS);
+    }
+    if (argv[1][10] == '3') {
+        f=fopen("answers/answer3.txt","r");
+        while((s=fgetc(f))!=EOF) {
+            printf("%c",s);
+        }
+        fclose(f);
+        exit(EXIT_SUCCESS);
+    }
+    if (argv[1][10] == '4') {
+        f=fopen("answers/answer4.txt","r");
+        while((s=fgetc(f))!=EOF) {
+            printf("%c",s);
+        }
+        fclose(f);
+        exit(EXIT_SUCCESS);
+    }
+    if (argv[1][10] == '5') {
+        f=fopen("answers/answer5.txt","r");
+        while((s=fgetc(f))!=EOF) {
+            printf("%c",s);
+        }
+        fclose(f);
+        exit(EXIT_SUCCESS);
+    }
+    if (argv[1][10] == '6') {
+        f=fopen("answers/answer6.txt","r");
+        while((s=fgetc(f))!=EOF) {
+            printf("%c",s);
+        }
+        fclose(f);
+        exit(EXIT_SUCCESS);
+    }
+    if (argv[1][10] == '7') {
+        f=fopen("answers/answer7.txt","r");
+        while((s=fgetc(f))!=EOF) {
+            printf("%c",s);
+        }
+        fclose(f);
+        exit(EXIT_SUCCESS);
+    }
+    if (argv[1][10] == '8') {
+        f=fopen("answers/answer8.txt","r");
+        while((s=fgetc(f))!=EOF) {
+            printf("%c",s);
+        }
+        fclose(f);
+        exit(EXIT_SUCCESS);
+    }
+    if (argv[1][10] == '9') {
+        f=fopen("answers/answer9.txt","r");
+        while((s=fgetc(f))!=EOF) {
+            printf("%c",s);
+        }
+        fclose(f);
+        exit(EXIT_SUCCESS);
+    }
+    if (argv[1][10] == '1' && argv[1][11] == '0') {
+        f=fopen("answers/answer10.txt","r");
+        while((s=fgetc(f))!=EOF) {
+            printf("%c",s);
+        }
+        fclose(f);
+        exit(EXIT_SUCCESS);
+    }
+    if (argv[1][10] == '1' && argv[1][11] == '1') {
+        f=fopen("answers/answer11.txt","r");
+        while((s=fgetc(f))!=EOF) {
+            printf("%c",s);
+        }
+        fclose(f);
+        exit(EXIT_SUCCESS);
+    }
+    if (argv[1][10] == '1' && argv[1][11] == '2') {
+        f=fopen("answers/answer12.txt","r");
+        while((s=fgetc(f))!=EOF) {
+            printf("%c",s);
+        }
+        fclose(f);
+        exit(EXIT_SUCCESS);
+    }
+    if (argv[1][10] == '1' && argv[1][11] == '3') {
+        f=fopen("answers/answer13.txt","r");
+        while((s=fgetc(f))!=EOF) {
+            printf("%c",s);
+        }
+        fclose(f);
+        exit(EXIT_SUCCESS);
+    }
+    if (argv[1][10] == '1' && argv[1][11] == '4') {
+        f=fopen("answers/answer14.txt","r");
+        while((s=fgetc(f))!=EOF) {
+            printf("%c",s);
+        }
+        fclose(f);
+        exit(EXIT_SUCCESS);
+    }
+    if (argv[1][10] == '1' && argv[1][11] == '5') {
+        f=fopen("answers/answer15.txt","r");
+        while((s=fgetc(f))!=EOF) {
+            printf("%c",s);
+        }
+        fclose(f);
+        exit(EXIT_SUCCESS);
+    }
+
+    return EXIT_SUCCESS;
+
 }

@@ -53,16 +53,38 @@ void accessData (
     }
 
     // Otherwise, record a cache miss
-    /* ... */
+    (*miss_count)++;
 
     // If cache is full, evict oldest line due to FIFO cache replacement policy
     if ( cache->occupancy == E ) {
         // dequeue from front of FIFO, update occupancy, and record an eviction
-        /* ... */
+        if (cache->front == NULL)
+            return;
+        else {
+            cache_line_t* temp = cache->front;
+            if (cache->back == temp)
+                cache->back = NULL;
+            cache->front = temp->next_cache_line;
+            free(temp);
+        }
+        cache->occupancy--;
+        (*eviction_count)++;
     }
 
     // Due to cache miss, enqueue cache line, and update occupancy
-    /* ... */
+    cache_line_t* newCacheLine = malloc(sizeof(cache_line_t));
+    newCacheLine->tag = tag;
+    newCacheLine->next_cache_line = NULL;
+
+    if (cache->back == NULL) {
+        cache->front = newCacheLine;
+        cache->back = newCacheLine;
+    }
+    else {
+        cache->back->next_cache_line = newCacheLine;
+        cache->back = newCacheLine;
+    }
+    cache->occupancy++;
 
 }
 
@@ -121,4 +143,5 @@ int main(int argc, char* argv[]) {
     printf("hits:%d misses:%d evictions:%d\n", hit_count, miss_count, eviction_count);
 
     exit( EXIT_SUCCESS );
+
 }
