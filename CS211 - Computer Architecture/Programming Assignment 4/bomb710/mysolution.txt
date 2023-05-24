@@ -1,0 +1,6 @@
+I can see Russia from my house!
+0 1 1 2 3 5
+3 h 870
+80 4
+5 115
+3 6 4 5 1 2

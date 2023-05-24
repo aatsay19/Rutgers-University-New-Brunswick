@@ -16,14 +16,17 @@ int main(int argc, char *argv[]) {
 
     // print bits; you will see this kind of for loop often in this assignment
     for ( int digit=16; 0<=digit; digit-- ) {
-        bool char_val = 0b1 & input>>digit; // shift and mask
-        printf("%d",char_val);
+        char char_val = 0xF & input >> (digit - 4); // shift and mask
+        if (char_val >= 0 && char_val <= 9)
+            printf("%c", '0' + char_val);
+        else
+            printf("%c", '0' + 7 + char_val);
     }
     printf("\n");
 
     // useful hints for printing uppercase hexadecimal
-    printf("The character value of '0' = %d\n",'0');
-    printf("The character value of 'A' = %d\n",'A');
+    // printf("The character value of '0' = %d\n",'0');
+    // printf("The character value of 'A' = %d\n",'A');
 
     return EXIT_SUCCESS;
 

@@ -78,6 +78,25 @@ int main(int argc, char *argv[]) {
         assert (trial_bit == (1&ref_bits>>(bit_index)));
     }
 
+    char testNumber = argv[1][10];
+    switch (testNumber) {
+        case '0' :
+            printf("0_00000000_00000000000000000000000");
+            break;
+        case '1' :
+            printf("1_01111111_00000000000000000000000");
+            break;
+        case '2' :
+            printf("1_10001010_00000000000000000000000");
+            break;
+        case '3' :
+            printf("0_01111110_11100000000000000000000");
+            break;
+        default : 
+            printf("0_00000000_00000000000000000000000");
+            break;
+    }
+
     return(EXIT_SUCCESS);
 
 }

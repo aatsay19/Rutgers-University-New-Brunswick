@@ -55,7 +55,8 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-*.txt
+# *.txt
+# *.png
 submissions.zip
 submissions
 answer_key
@@ -64,7 +65,7 @@ answer_key
 *.xlsx
 
 # Bomb Lab
-bomb*
+# bomb*
 
 # Cache Lab
 cachelab.tar
