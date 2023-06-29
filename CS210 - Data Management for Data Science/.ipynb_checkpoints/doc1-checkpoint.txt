@@ -1,0 +1,2 @@
+It is going to rain today.
+Hello World! Let's   learn    Python!

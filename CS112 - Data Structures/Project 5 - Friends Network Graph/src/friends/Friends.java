@@ -43,7 +43,7 @@ public class Friends {
    			arr1[i] = Integer.MAX_VALUE; 
 		}
 		int a = g.map.get(p1);
-		Person firstPerson = g.members[a];
+		// Person firstPerson = g.members[a];
 		arr1[a] = 0; 
 		arr3[a] = true;
 		x.enqueue(a);

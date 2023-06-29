@@ -161,7 +161,7 @@ public class Polynomial {
 	 */
 	public static float evaluate(Node poly, float x) {
 		if (poly != null) {
-			float result = new Float(0);
+			float result = 0;
 		
 			while (poly != null) {
 				if (poly.term.degree != 0) {
